@@ -92,6 +92,22 @@ class List{
         
     }
 
+    int search(int key){
+        Node* temp = head;
+        int idx = 0;
+
+        while(temp != NULL){
+            if (temp->data == key){
+                return idx;
+            }
+
+            temp = temp->next;
+            idx++;
+        }
+        return -1;
+
+    }
+
     void printLL(){
         Node* temp = head;
 
@@ -109,5 +125,8 @@ int main(){
     ll.push_back(2);
     ll.push_front(3);
     ll.insert(4, 1);
+    
+    
+    ll.search(2);
     ll.printLL();
 }
